@@ -1,17 +1,10 @@
 <script>
-import { createEventDispatcher } from 'svelte';
 import { redirectTo } from './redirect';
-
-const dispatcher = createEventDispatcher();
 
 export let name = 'Home';
 export let path = '/';
 
-const clickBtn = () => {
-  redirectTo(path);
-  
-  dispatcher('callback', path);
-};
+const clickBtn = () => redirectTo(path);
 </script>
 
 <style>
