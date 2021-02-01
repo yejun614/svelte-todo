@@ -1,18 +1,12 @@
 <script>
+import { redirectTo } from './redirect';
 
-import { curRoute } from './store';
+// Page data
+export let path = '/Home';
+export let name = 'Home';
 
-export let page = { path: '/Home', name: 'Home' };
-
-function redirectTo(event) {
-  // Change current router path
-  curRoute.set(event.target.pathname);
-
-  // Push browser history
-  window.history.pushState({path: page.path}, '',
-    window.location.origin + page.path);
-}
-
+// Click callback function
+const clicked = () => redirectTo(path);
 </script>
 
 <style>
@@ -23,4 +17,4 @@ a {
 
 </style>
 
-<a href="{page.path}" on:click|preventDefault={redirectTo}>{page.name}</a>
+<a href="{path}" on:click|preventDefault={clicked}>{name}</a>

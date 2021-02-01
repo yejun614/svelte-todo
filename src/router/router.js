@@ -1,7 +1,8 @@
 
 import Home from '../pages/Home.svelte';
-import About from '../pages/About.svelte';
-import Test from '../pages/Test.svelte';
+import SignIn from '../pages/user/SignIn.svelte';
+import SignUp from '../pages/user/SignUp.svelte';
+import FindUser from '../pages/user/FindUser.svelte';
 
 export default [
   {
@@ -10,13 +11,18 @@ export default [
     component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About,
+    path: '/user',
+    name: 'Sign In',
+    component: SignIn,
   },
   {
-    path: '/test',
-    name: 'Test',
-    component: Test,
+    path: '/user/up',
+    name: 'Sign Up',
+    component: SignUp,
+  },
+  {
+    path: '/user/find',
+    name: 'Find User',
+    component: FindUser,
   },
 ];
