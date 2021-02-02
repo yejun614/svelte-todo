@@ -1,7 +1,7 @@
 <script>
 
   import { onDestroy, createEventDispatcher } from 'svelte';
-  import { curRoute } from './store';
+  import { curRoute } from '@/store';
   import router from './router';
   
   const dispatcher = createEventDispatcher();

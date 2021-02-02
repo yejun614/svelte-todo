@@ -1,5 +1,5 @@
 
-import { curRoute } from './store';
+import { curRoute } from '@/store';
 
 export function redirectTo(path) {
   // Change current router path

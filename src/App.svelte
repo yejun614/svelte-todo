@@ -1,8 +1,8 @@
 <script>
-import RouterLink from './router/RouterLink.svelte';
-import Route from './router/Route.svelte';
+import Route from 'router/Route.svelte';
 
-import RouterBtn from './router/RouterBtn.svelte';
+import RouterLink from 'router/RouterLink.svelte';
+import RouterBtn from 'router/RouterBtn.svelte';
 
 let currentPath = '/';
 
