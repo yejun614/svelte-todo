@@ -1,6 +1,7 @@
 
 import Home from 'pages/Home.svelte';
 import SignIn from 'pages/user/SignIn.svelte';
+import SignOut from 'pages/user/SignOut.svelte';
 import SignUp from 'pages/user/SignUp.svelte';
 import FindUser from 'pages/user/FindUser.svelte';
 
@@ -14,6 +15,11 @@ export default [
     path: '/user',
     name: 'Sign In',
     component: SignIn,
+  },
+  {
+    path: '/user/out',
+    name: 'Sign Out',
+    component: SignOut,
   },
   {
     path: '/user/up',

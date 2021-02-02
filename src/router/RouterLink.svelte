@@ -10,11 +10,14 @@ const clicked = () => redirectTo(path);
 </script>
 
 <style>
-
-a {
+a:hover {
   text-decoration: blink;
 }
-
 </style>
 
-<a href="{path}" on:click|preventDefault={clicked}>{name}</a>
+<a class={$$props.class}
+  href="{path}"
+  on:click|preventDefault={clicked}
+  >
+  {name}
+</a>

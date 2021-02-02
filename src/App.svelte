@@ -1,29 +1,7 @@
 <script>
 import Route from 'router/Route.svelte';
-
 import RouterLink from 'router/RouterLink.svelte';
-import RouterBtn from 'router/RouterBtn.svelte';
-
-let currentPath = '/';
-
-let nextPath = {
-  '/': { path: '/user', name: 'Sign In' }, 
-  '/user': { path: '/', name: 'Back' },
-  '/user/up': { path: '/user', name: 'Sign In' },
-  '/user/find': { path: '/user', name: 'Sign In' },
-};
-
-let buttonName = 'Sign In';
-let buttonPath = '/user';
-
-const changePath = event => {
-  currentPath = event.detail.path;
-  
-  const next = nextPath[currentPath];
-  
-  buttonName = next.name;
-  buttonPath = next.path;
-}
+import AppMenuBtn from './AppMenuBtn.svelte'
 </script>
 
 <style>
@@ -39,20 +17,24 @@ header {
 
 header .site-logo {
   width: fit-content;
-  
+  margin-left: 20px;
+}
+
+header .site-logo :global(.link) {
+  color: #333333;
   font-style: italic;
   text-transform: uppercase;
-  cursor: default;
-  
-  margin-left: 20px;
+  cursor: pointer;
 }
 </style>
 
-<Route on:change={changePath} />
+<Route />
 
 <header>
-  <div class="site-logo">sim todo app</div>
+  <div class="site-logo">
+    <RouterLink class="link" path={"/"} name={"sim todo app"} />
+  </div>
   
-  <RouterBtn name={buttonName} path={buttonPath} />
+  <AppMenuBtn />
 </header>
 

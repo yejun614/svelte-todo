@@ -1,5 +1,10 @@
 <script>
+import { createEventDispatcher } from 'svelte';
+
 export let name = '';
+
+const dispatcher = createEventDispatcher();
+const submit = () => dispatcher('submit');
 </script>
 
 <style>
@@ -30,4 +35,4 @@ a:hover {
 }
 </style>
 
-<a>{name}</a>
+<a on:click={submit}>{name}</a>

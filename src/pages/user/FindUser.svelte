@@ -1,7 +1,31 @@
 <script>
+import Title from './components/Title.svelte';
 import TextInput from './components/TextInput.svelte';
 import SubmitButton from './components/SubmitButton.svelte';
 
+import RouterLink from 'router/RouterLink.svelte';
+
+let title = 'Find your password';
+let isError = false;
+
+let email = '';
+
+const findUser = () => {
+  // Firebase Authentication
+  firebase.auth().sendPasswordResetEmail(email).then(function() {
+    // Email sent.
+    isError = false;
+    title = 'A password reset email has been sent.';
+    
+    // Clear email field
+    email = '';
+    
+  }).catch(function(error) {
+    // An error happened.
+    isError = true;
+    title = error.message;
+  });
+};
 </script>
 
 <style>
@@ -32,12 +56,16 @@ form {
 
 <content>
 <form>
-  <div class="title">Find your password</div>
+  <Title title={title} isError={isError} />
   
   <div class="wrap">
-    <TextInput placeholder={'YOUR EMAIL'} />
+    <TextInput placeholder={'YOUR EMAIL'} bind:value={email} />
   </div>
   
-  <SubmitButton name={'try it'} />
+  <SubmitButton name={'try it'} on:submit={findUser} />
+  
+  <div class="help">
+    <RouterLink path={"/user"} name={"BACK"} />
+  </div>
 </form>
 </content>

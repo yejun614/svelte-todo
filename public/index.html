@@ -5,6 +5,32 @@
 	<meta name='viewport' content='width=device-width,initial-scale=1'>
 
 	<title>SIM TODO</title>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyCsqug_SPWgJcJUUAKyi4GeSWc0Ce_XaQg",
+      authDomain: "svelte-todo-app-8e5a6.firebaseapp.com",
+      projectId: "svelte-todo-app-8e5a6",
+      storageBucket: "svelte-todo-app-8e5a6.appspot.com",
+      messagingSenderId: "892577207205",
+      appId: "1:892577207205:web:d670f43c32922e952dce4c",
+      measurementId: "G-MCDDG678XM"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 
   <!-- Material Design Icons -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
