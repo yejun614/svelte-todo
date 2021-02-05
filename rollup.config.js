@@ -85,7 +85,7 @@ export default {
 		production && terser(),
     
     // Rollup plugin alias
-    aliases
+		aliases,
 	],
 	watch: {
 		clearScreen: false

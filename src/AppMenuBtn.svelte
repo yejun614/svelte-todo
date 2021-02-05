@@ -111,7 +111,7 @@ nav li :global(.link) {
   {#if $authState}
   <li>
     <span class="material-icons">account_box</span>
-    <RouterLink class="link" path={"/"} name={"User Profile"} />
+    <RouterLink class="link" path={"/user/profile"} name={"User Profile"} />
   </li>
   {/if}
   

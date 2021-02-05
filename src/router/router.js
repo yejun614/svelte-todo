@@ -4,6 +4,7 @@ import SignIn from 'pages/user/SignIn.svelte';
 import SignOut from 'pages/user/SignOut.svelte';
 import SignUp from 'pages/user/SignUp.svelte';
 import FindUser from 'pages/user/FindUser.svelte';
+import UserProfile from 'pages/user/UserProfile.svelte';
 
 export default [
   {
@@ -30,5 +31,10 @@ export default [
     path: '/user/find',
     name: 'Find User',
     component: FindUser,
+  },
+  {
+    path: '/user/profile',
+    name: 'User Profile',
+    component: UserProfile,
   },
 ];
