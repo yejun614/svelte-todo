@@ -3,8 +3,9 @@ import BoxInput from './BoxInput.svelte';
 import BoxList from './BoxList.svelte';
 
 export let title = "title";
-
 export let list = [];
+
+let boxListNode;
 
 const addItem = event => {
   const text = event.detail.text;
@@ -20,6 +21,7 @@ const removeItems = event => {};
 /* Container */
 .box-container {
   width: 400px;
+  max-height: 80%;
 
   display: flex;
   flex-direction: column;
@@ -37,6 +39,8 @@ const removeItems = event => {};
 
 /* Elements */
 .title {
+  min-height: 60px;
+
   font-weight: bold;
   text-transform: uppercase;
   

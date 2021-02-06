@@ -19,12 +19,20 @@ onMount(() => {
   const textInput = document.querySelector('.text-input');
   textInput.focus();
 });
+
+const keydown = event => {
+  const code = event.code;
+
+  if (code === 'Enter') {
+    if (value != '') addItem();
+  }
+};
 </script>
 
 <style>
 
 .box-input-container {
-  height: 60px;
+  min-height: 60px;
   border: 2px solid #333333;
   
   display: flex;
@@ -70,3 +78,5 @@ onMount(() => {
     <i class="material-icons">add</i>
   </button>
 </div>
+
+<svelte:window on:keydown={keydown} />

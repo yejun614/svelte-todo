@@ -3,9 +3,16 @@ import BoxItem from './BoxItem.svelte';
 
 export let list = [];
 
+const changeList = () => {
+  console.log('change');
+}
 </script>
 
 <style>
+.box-list {
+  max-height: 100%;
+  overflow-y: scroll;
+}
 
 .empty {
   width: 100%;
@@ -26,8 +33,8 @@ export let list = [];
 
 .item {
   width: 100%;
-  height: 60px;
-  
+  padding: 10px 0;
+
   display: flex;
   align-items: center;
   
@@ -48,7 +55,7 @@ export let list = [];
 
 </style>
 
-<div class="box-list-container">
+<div class="box-list" on:change={changeList}>
 
 {#if list.length === 0}
   <div class="empty">
